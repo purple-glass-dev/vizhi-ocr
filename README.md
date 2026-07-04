@@ -7,7 +7,7 @@ Vizhi lives in your menubar. Hit a shortcut, drag a box around whatever you want
 ---
 ## How it works(Video demo)
 
-<img src="./media/vizhi-ocr-demo.gif" width="640" alt="Project Demo Video">
+<video src="https://github.com/user-attachments/assets/bed0875d-890e-4998-bb91-30539d59a28a" autoplay loop muted playsinline width="100%"></video>
 
 
 ## Why it exists
