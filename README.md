@@ -5,10 +5,38 @@
 Vizhi lives in your menubar. Hit a shortcut, drag a box around whatever you want to grab, and the text lands on your clipboard (saved as markdown or both!) a moment later. No browser tab, no upload, no account. If you've ever tried to copy text out of a PDF that won't let you select it, or retyped a table from a screenshot, or pointed your phone at a slide to capture an equation, this is the thing that makes all of that stop.
 
 ---
+
+
 ## How it works(Video demo)
 
 <video src="https://github.com/user-attachments/assets/bed0875d-890e-4998-bb91-30539d59a28a" autoplay loop muted playsinline width="100%"></video>
 
+## Installation Guide
+
+#### Install via HomeBrew
+
+```sh
+brew install --cask purple-glass-dev/vizhiocr/vizhi-ocr
+```
+
+Or tap first, then install:
+
+```sh
+brew tap purple-glass-dev/vizhiocr
+brew install --cask vizhi-ocr
+```
+
+#### Upgrade
+
+```sh
+brew upgrade --cask vizhi-ocr
+```
+
+### Manual Installation
+
+[Download VizhiOCR DMG](https://github.com/purple-glass-dev/vizhi-ocr/releases/download/v0.1.0/VizhiOCR-0.1.0.dmg)
+
+---
 
 ## Why it exists
 
