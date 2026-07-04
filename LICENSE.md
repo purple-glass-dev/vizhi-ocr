@@ -1,4 +1,5 @@
-Vizhi OCR
+# Vizhi OCR
+
 Copyright (C) 2026 Srinidhi Aravind 
 
 This program is free software: you can redistribute it and/or modify
@@ -14,9 +15,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-========================================================================
-ADDITIONAL PERMISSION & EXCEPTION NOTICE
-========================================================================
+---
+
+## ADDITIONAL PERMISSION & EXCEPTION NOTICE
+
 
 Pursuant to Section 7 of the GNU General Public License, version 3, the 
 copyright holders of this software grant the following additional permission:
@@ -31,9 +33,10 @@ derivative software entirely under the standard terms of the GPL-3.0 and must
 not use the original name, "Vizhi OCR", or state that their binary is 
 an official distribution of the original project.
 
-========================================================================
-                      GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
+---
+
+## GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
