@@ -1,0 +1,52 @@
+{
+  "version": 4,
+  "defaultModelID": "glm-ocr-4bit",
+  "models": [
+    {
+      "id": "glm-ocr-4bit",
+      "displayName": "GLM-OCR (4-bit)",
+      "summary": "Balanced default. Strong on tables, math, and multi-column layouts at modest RAM.",
+      "tier": "standard",
+      "capabilities": ["text", "tables", "multicolumn", "math", "handwriting"],
+      "minRAMGB": 8,
+      "recommendedRAMGB": 16,
+      "quantization": "q4",
+      "prompt": "",
+      "source": { "huggingFaceRepo": "mlx-community/GLM-OCR-4bit" },
+      "files": [
+        { "name": "chat_template.jinja", "sizeBytes": 4606, "sha256": "" },
+        { "name": "config.json", "sizeBytes": 2080, "sha256": "" },
+        { "name": "generation_config.json", "sizeBytes": 165, "sha256": "" },
+        { "name": "model.safetensors", "sizeBytes": 1247191941, "sha256": "" },
+        { "name": "model.safetensors.index.json", "sizeBytes": 55990, "sha256": "" },
+        { "name": "preprocessor_config.json", "sizeBytes": 367, "sha256": "" },
+        { "name": "processor_config.json", "sizeBytes": 597, "sha256": "" },
+        { "name": "tokenizer.json", "sizeBytes": 6838609, "sha256": "" },
+        { "name": "tokenizer_config.json", "sizeBytes": 1066, "sha256": "" }
+      ]
+    },
+    {
+      "id": "glm-ocr-8bit",
+      "displayName": "GLM-OCR (8-bit, higher quality)",
+      "summary": "Higher-precision GLM-OCR for the cleanest tables and math when you have the RAM.",
+      "tier": "ultra",
+      "capabilities": ["text", "tables", "multicolumn", "math", "handwriting"],
+      "minRAMGB": 16,
+      "recommendedRAMGB": 24,
+      "quantization": "q8",
+      "prompt": "",
+      "source": { "huggingFaceRepo": "mlx-community/GLM-OCR-8bit" },
+      "files": [
+        { "name": "chat_template.jinja", "sizeBytes": 4606, "sha256": "" },
+        { "name": "config.json", "sizeBytes": 2080, "sha256": "" },
+        { "name": "generation_config.json", "sizeBytes": 165, "sha256": "" },
+        { "name": "model.safetensors", "sizeBytes": 1583785269, "sha256": "" },
+        { "name": "model.safetensors.index.json", "sizeBytes": 55990, "sha256": "" },
+        { "name": "preprocessor_config.json", "sizeBytes": 367, "sha256": "" },
+        { "name": "processor_config.json", "sizeBytes": 597, "sha256": "" },
+        { "name": "tokenizer.json", "sizeBytes": 6838609, "sha256": "" },
+        { "name": "tokenizer_config.json", "sizeBytes": 1066, "sha256": "" }
+      ]
+    }
+  ]
+}

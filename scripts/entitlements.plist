@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!--
+    Hardened-runtime entitlements for the notarized, NON-sandboxed Developer ID build.
+
+    disable-library-validation: MLX's CPU backend compiles kernels to a .dylib at runtime and
+    dlopen()s it (mlx/backend/cpu/compiled.cpp). Hardened runtime's library validation would block
+    that unsigned, runtime-built dylib without this exception. This is the standard entitlement for
+    MLX-based apps. We do NOT enable allow-jit / allow-unsigned-executable-memory: MLX uses no
+    in-process JIT (no MAP_JIT/pthread_jit), and Metal kernels load from the bundled, precompiled
+    default.metallib.
+
+    Not sandboxed (direct distribution), so no app-sandbox / network-client keys: outbound network
+    for the one-time model download needs no entitlement here. Screen Recording is a runtime TCC
+    grant, not an entitlement.
+  -->
+  <key>com.apple.security.cs.disable-library-validation</key>
+  <true/>
+</dict>
+</plist>
