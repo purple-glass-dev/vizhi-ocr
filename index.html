@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizhi OCR</title>
+    
+    
+    <meta name="description" content="Simple, secure, and fully local OCR for macOS. Copy text, tables, and math equations offline with no tracking.">
+    <meta name="keywords" content="Vizhi, OCR, macOS, MLX, Apple Silicon, local AI, privacy, markdown tables, LaTeX">
+    <meta name="author" content="purple-glass-dev">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    
+    <nav class="navbar" id="home">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-symbol">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        
+                        <path d="M4 8V6a2 2 0 0 1 2-2h2" />
+                        <path d="M16 4h2a2 2 0 0 1 2 2v2" />
+                        <path d="M20 16v2a2 2 0 0 1-2 2h-2" />
+                        <path d="M8 20H6a2 2 0 0 1-2-2v-2" />
+                        
+                        <line x1="8" y1="9" x2="16" y2="9" />
+                        <line x1="8" y1="12" x2="16" y2="12" />
+                        <line x1="8" y1="15" x2="13" y2="15" />
+                    </svg>
+                </div>
+                <span>Vizhi OCR</span>
+            </a>
+            <div class="nav-links">
+                <a href="#demo" class="nav-link">Demo</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How it works</a>
+                <a href="#download" class="nav-link">Download</a>
+                <a href="https://github.com/purple-glass-dev/vizhi-ocr" class="btn btn-secondary" target="_blank" id="nav-github-btn">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <header class="section hero-section">
+        <h1 class="hero-title">
+            Vizhi OCR
+        </h1>
+        <p class="hero-description">
+            Vizhi lives in your menu bar. Press a shortcut, draw a box over any part of your screen, and get complex text, messy handwriting, and mathematical equations back as clean text or tables in your clipboard. It runs completely offline on your Mac, so your screenshots never leave your machine.
+        </p>
+        <div class="hero-ctas">
+            <a href="#download" class="btn btn-primary" id="hero-primary-cta">Get Started</a>
+            <a href="https://github.com/purple-glass-dev/vizhi-ocr" class="btn btn-secondary" id="hero-secondary-cta" target="_blank">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                </svg>
+                GitHub
+            </a>
+        </div>
+    </header>
+
+   
+    <section class="section demo-section" id="demo">
+        <div class="demo-wrapper">
+            <video class="demo-media" autoplay loop muted playsinline poster="../media/vizhi-ocr-demo.gif">
+                <source src="../media/vizhi-ocr-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <p class="demo-caption">
+            Select any part of your screen or drop in files to copy structured text and tables.
+        </p>
+    </section>
+
+
+    <section class="section" id="features">
+        <div class="section-header">
+            <h2 class="section-subtitle">Simple, helpful features.</h2>
+            <p class="section-desc">Get the text you want without complex workflows or subscription plans.</p>
+        </div>
+        
+        <div class="features-grid">
+            
+            <div class="glass-panel feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                </div>
+                <h3 class="feature-title">Fast and Smart Modes</h3>
+                <p class="feature-description">Use Apple's built-in tool for fast grabs, or switch to local AI to copy handwriting and tables accurately.</p>
+            </div>
+            
+            
+            <div class="glass-panel feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="9" y1="3" x2="9" y2="21"/>
+                        <line x1="15" y1="3" x2="15" y2="21"/>
+                        <line x1="3" y1="9" x2="21" y2="9"/>
+                        <line x1="3" y1="15" x2="21" y2="15"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Recreates Tables and Math</h3>
+                <p class="feature-description">Copy tables straight as markdown grids and math formulas as LaTeX instead of losing all layout formatting.</p>
+            </div>
+
+            
+            <div class="glass-panel feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                </div>
+                <h3 class="feature-title">Fully Offline</h3>
+                <p class="feature-description">Works without an internet connection. There is no tracking, no account signups, and no data collection.</p>
+            </div>
+
+            
+            <div class="glass-panel feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 12h20M12 2v20" />
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </div>
+                <h3 class="feature-title">Edit Before Copying</h3>
+                <p class="feature-description">Look at the extracted text side-by-side with your original screenshot to correct any errors before pasting.</p>
+            </div>
+
+            <div class="glass-panel feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="12" y1="18" x2="12" y2="12" />
+                        <line x1="9" y1="15" x2="15" y2="15" />
+                    </svg>
+                </div>
+                <h3 class="feature-title">Drop in Files</h3>
+                <p class="feature-description">Drag and drop images or PDFs directly onto the app window to grab text page-by-page without sharing screen permission.</p>
+            </div>
+
+           
+            <div class="glass-panel feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <line x1="6" y1="8" x2="6" y2="8" />
+                        <line x1="10" y1="8" x2="10" y2="8" />
+                        <line x1="14" y1="8" x2="14" y2="8" />
+                        <line x1="18" y1="8" x2="18" y2="8" />
+                        <line x1="6" y1="12" x2="18" y2="12" />
+                        <line x1="6" y1="16" x2="18" y2="16" />
+                    </svg>
+                </div>
+                <h3 class="feature-title">Global Keys</h3>
+                <p class="feature-description">Set your own custom keyboard shortcuts to instantly start captures from any application on your Mac.</p>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="section" id="how-it-works">
+        <div class="section-header">
+            <h2 class="section-subtitle">How it works</h2>
+            <p class="section-desc">Get text and tables from your screen in three easy steps.</p>
+        </div>
+        
+        <div class="how-it-works-flow">
+            <div class="glass-panel step-card">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3 class="step-title">Take a Capture</h3>
+                    <p class="step-desc">Press your shortcut key and select a region on your screen, or drop a PDF document into the app.</p>
+                </div>
+            </div>
+            
+            <div class="glass-panel step-card">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3 class="step-title">Local Scan</h3>
+                    <p class="step-desc">The app reads the image directly on your computer's chip using local AI or the built-in system scanner.</p>
+                </div>
+            </div>
+
+            <div class="glass-panel step-card">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3 class="step-title">Paste Result</h3>
+                    <p class="step-desc">Check the text next to the image, make quick edits if you want, and copy or save the markdown output.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section download-section" id="download">
+        <div class="section-header">
+            <h2 class="section-subtitle">Install Vizhi OCR</h2>
+            <p class="section-desc">Download the app or compile it from the source code.</p>
+        </div>
+        
+        <div class="download-options">
+            
+            <div class="glass-panel download-card">
+                <div class="download-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <h3>Homebrew</h3>
+                <p class="download-meta">Requires macOS 15 or newer</p>
+                <div class="terminal-box">
+                    <code id="brew-command">brew install --cask purple-glass-dev/vizhiocr/vizhi-ocr</code>
+                    <button class="copy-btn" id="copy-command" title="Copy to clipboard">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="glass-panel download-card">
+                <div class="download-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                    </svg>
+                </div>
+                <h3>Direct Download</h3>
+                <p class="download-meta">Version 0.1.0 • File size: ~5MB</p>
+                <a href="https://github.com/purple-glass-dev/vizhi-ocr/releases/download/v0.1.0/VizhiOCR-0.1.0.dmg" class="btn btn-primary" id="download-dmg-btn">
+                    Download DMG
+                </a>
+            </div>
+
+        
+            <div class="glass-panel download-card">
+                <div class="download-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                </div>
+                <h3>Source Code</h3>
+                <p class="download-meta">Open source code under GPL-3.0 license</p>
+                <a href="https://github.com/purple-glass-dev/vizhi-ocr" class="btn btn-secondary" id="download-source-btn" target="_blank">
+                    GitHub Repo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

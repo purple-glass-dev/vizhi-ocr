@@ -1,0 +1,27 @@
+# Swift / SwiftPM
+.build/
+.swiftpm/
+Package.resolved
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# macOS
+.DS_Store
+
+# Models (downloaded at runtime, never committed)
+Models/
+*.safetensors
+*.gguf
+
+# Build artifacts
+DerivedData/
+build/
+*.dmg
+
+# App packaging outputs
+dist/
+
+# Benchmark: fetched third-party datasets (their own licenses) + generated reports.
+# The committed synthetic corpus under benchmarks/corpus/ is intentionally NOT ignored.
+benchmarks/external/
+benchmarks/report.md
