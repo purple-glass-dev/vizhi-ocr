@@ -432,8 +432,11 @@ h1, h2, h3, h4 {
 }
 
 .terminal-box code {
-    white-space: nowrap;
-    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    text-align: left;
+    padding-right: 8px;
+    flex: 1;
 }
 
 .copy-btn {
