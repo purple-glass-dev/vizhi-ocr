@@ -24,8 +24,11 @@ struct SettingsStoreTests {
         #expect(store.selectedModelID == nil)
         #expect(store.outputDestination == .clipboard)
         #expect(store.playsCompletionSound == false)
-        #expect(store.previewBeforeCopy == false)
+        // Preview & edit is on by default — the useful default for catching a misread.
+        #expect(store.previewBeforeCopy == true)
         #expect(store.hasCompletedOnboarding == false)
+        #expect(store.saveScreenshotsEnabled == false)
+        #expect(store.screenshotFolderURL == SettingsStore.defaultSaveFolder)
     }
 
     @Test("Changes persist and reload from the same defaults")
@@ -41,6 +44,8 @@ struct SettingsStoreTests {
         store.playsCompletionSound = true
         store.previewBeforeCopy = true
         store.hasCompletedOnboarding = true
+        store.saveScreenshotsEnabled = true
+        store.screenshotFolderURL = URL(fileURLWithPath: "/tmp/vizhi-shots")
 
         let reloaded = SettingsStore(defaults: defaults)
         #expect(reloaded.playsCompletionSound == true)
@@ -52,6 +57,8 @@ struct SettingsStoreTests {
         #expect(reloaded.historyEnabled == true)
         #expect(reloaded.outputDestination == .both)
         #expect(reloaded.saveFolderURL.path == "/tmp/vizhi-out")
+        #expect(reloaded.saveScreenshotsEnabled == true)
+        #expect(reloaded.screenshotFolderURL.path == "/tmp/vizhi-shots")
     }
 
     @Test("Hotkeys default to the factory shortcuts")

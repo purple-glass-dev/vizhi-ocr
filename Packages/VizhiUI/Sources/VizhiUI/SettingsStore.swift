@@ -66,6 +66,20 @@ public final class SettingsStore {
         didSet { defaults.set(saveFolderURL.path, forKey: Keys.saveFolderPath) }
     }
 
+    /// Save the original captured region as a PNG alongside the recognized text. Screen captures
+    /// only (not imported files). Off by default to honor the privacy promise.
+    public var saveScreenshotsEnabled: Bool {
+        didSet { defaults.set(saveScreenshotsEnabled, forKey: Keys.saveScreenshotsEnabled) }
+    }
+
+    /// Folder where screenshot PNGs are saved when `saveScreenshotsEnabled` is on. Kept separate
+    /// from `saveFolderURL` so images and text notes can live in different places.
+    /// Note: persisted as a plain path, so it assumes the app stays un-sandboxed; a sandboxed build
+    /// would need a security-scoped bookmark here (as would `saveFolderURL`).
+    public var screenshotFolderURL: URL {
+        didSet { defaults.set(screenshotFolderURL.path, forKey: Keys.screenshotFolderPath) }
+    }
+
     /// Global capture shortcuts, keyed by action. Starts from `Hotkey.defaults()` and is
     /// overridden by anything the user has recorded. Persisted as JSON keyed by action name.
     public var hotkeys: [CaptureAction: Hotkey] {
@@ -88,6 +102,9 @@ public final class SettingsStore {
         self.outputDestination = defaults.string(forKey: Keys.outputDestination)
             .flatMap(OutputDestination.init) ?? .clipboard
         self.saveFolderURL = defaults.string(forKey: Keys.saveFolderPath).map { URL(fileURLWithPath: $0) }
+            ?? Self.defaultSaveFolder
+        self.saveScreenshotsEnabled = defaults.bool(forKey: Keys.saveScreenshotsEnabled)
+        self.screenshotFolderURL = defaults.string(forKey: Keys.screenshotFolderPath).map { URL(fileURLWithPath: $0) }
             ?? Self.defaultSaveFolder
         self.hotkeys = Self.loadHotkeys(defaults)
     }
@@ -144,6 +161,8 @@ public final class SettingsStore {
         static let hasCompletedOnboarding = "hasCompletedOnboarding"
         static let outputDestination = "outputDestination"
         static let saveFolderPath = "saveFolderPath"
+        static let saveScreenshotsEnabled = "saveScreenshotsEnabled"
+        static let screenshotFolderPath = "screenshotFolderPath"
         static let hotkeys = "hotkeys"
     }
 }

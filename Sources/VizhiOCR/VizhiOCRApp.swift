@@ -15,6 +15,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 /// Lets `CaptureController` read preferences without importing the UI layer's concrete store.
 extension SettingsStore: SettingsContext {}
 
+/// Lets `RegionCaptureCoordinator` read the screenshot-saving preferences through an abstraction.
+extension SettingsStore: ScreenshotSaveContext {}
+
 /// Lets `CaptureController` record into history through an abstraction, not the concrete store.
 extension CaptureHistoryStore: HistoryRecording {}
 

@@ -1,6 +1,15 @@
 import AppKit
+import os
 import VizhiCapture
 import VizhiCore
+
+/// The settings a region capture reads to decide whether to keep the screenshot image. Backed by
+/// `SettingsStore` in the app; a narrow protocol keeps the coordinator decoupled from the UI layer.
+@MainActor
+protocol ScreenshotSaveContext: AnyObject {
+    var saveScreenshotsEnabled: Bool { get }
+    var screenshotFolderURL: URL { get }
+}
 
 /// Orchestrates a screen-region capture: shows a dimmed selection overlay on every display, then
 /// on selection hides the overlay, captures that display's region via ScreenCaptureKit, and hands
@@ -9,13 +18,17 @@ import VizhiCore
 @MainActor
 final class RegionCaptureCoordinator {
     private let controller: CaptureController
+    private let settings: ScreenshotSaveContext
     private let capturer = ScreenRegionCapturer()
+
+    private static let logger = Logger(subsystem: "com.vizhi.ocr", category: "capture")
 
     /// One overlay window per screen; held for the duration of a selection.
     private var overlayWindows: [OverlayWindow] = []
 
-    init(controller: CaptureController) {
+    init(controller: CaptureController, settings: ScreenshotSaveContext) {
         self.controller = controller
+        self.settings = settings
     }
 
     /// Begins a capture in the given mode, or reports a recoverable message if capture isn't
@@ -100,10 +113,24 @@ final class RegionCaptureCoordinator {
                     displayFrame: displayFrame,
                     scaleFactor: scale
                 )
+                saveScreenshotIfEnabled(image)
                 controller.recognize([image], mode: mode)
             } catch {
                 controller.report(failure: "Capture failed: \(error)")
             }
+        }
+    }
+
+    /// Persists the captured region as a PNG when the user has opted in. Runs before recognition so
+    /// the image is kept regardless of the OCR outcome (failure, Vision fallback, or a discarded
+    /// preview). A save failure is logged but never blocks the capture — a bad folder shouldn't cost
+    /// the user their recognized text.
+    private func saveScreenshotIfEnabled(_ image: OCRImage) {
+        guard settings.saveScreenshotsEnabled else { return }
+        do {
+            try ScreenshotSaver.save(image, to: settings.screenshotFolderURL)
+        } catch {
+            Self.logger.warning("Screenshot save failed: \(String(describing: error), privacy: .public)")
         }
     }
 }

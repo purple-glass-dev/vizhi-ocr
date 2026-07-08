@@ -24,6 +24,17 @@ public struct SettingsView: View {
                 }
                 Toggle("Play a sound when a capture completes", isOn: $settings.playsCompletionSound)
                 Toggle("Launch at startup", isOn: $settings.launchAtLogin)
+                Toggle("Save screenshot images", isOn: $settings.saveScreenshotsEnabled)
+                if settings.saveScreenshotsEnabled {
+                    HStack {
+                        Text("Screenshot folder").foregroundStyle(.secondary)
+                        Spacer()
+                        Text(settings.screenshotFolderURL.lastPathComponent).foregroundStyle(.secondary)
+                        Button("Choose…") { chooseScreenshotFolder() }
+                    }
+                    Text("Saves each captured region as a PNG. Screen captures only, not imported files.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
             }
             Section("Output") {
                 Picker("Copy as", selection: $settings.outputFormat) {
@@ -100,6 +111,18 @@ public struct SettingsView: View {
         panel.prompt = "Choose"
         if panel.runModal() == .OK, let url = panel.url {
             settings.saveFolderURL = url
+        }
+    }
+
+    private func chooseScreenshotFolder() {
+        let panel = NSOpenPanel()
+        panel.canChooseDirectories = true
+        panel.canChooseFiles = false
+        panel.allowsMultipleSelection = false
+        panel.directoryURL = settings.screenshotFolderURL
+        panel.prompt = "Choose"
+        if panel.runModal() == .OK, let url = panel.url {
+            settings.screenshotFolderURL = url
         }
     }
 }
