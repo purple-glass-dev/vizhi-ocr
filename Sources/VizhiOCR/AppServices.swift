@@ -58,7 +58,7 @@ final class AppServices {
         self.settings = settings
         self.history = history
         self.controller = controller
-        self.regionCapture = RegionCaptureCoordinator(controller: controller)
+        self.regionCapture = RegionCaptureCoordinator(controller: controller, settings: settings)
     }
 
     /// Registers the global hotkeys from the user's settings — both screen captures and Import File.

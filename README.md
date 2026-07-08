@@ -64,6 +64,8 @@ Either way, the image and the text stay on your Mac. There is no telemetry, no a
 
 **Send it where you want.** Clipboard, a saved Markdown file, or both. When a result contains a table, the preview also offers CSV and JSON export for that result, so a captured table can go straight into a spreadsheet or a script.
 
+**Keep the screenshot too.** Turn on "Save screenshot images" and every screen capture also lands in a folder you choose as a PNG (`VizhiOCR-Screenshot-<timestamp>.png`). Off by default, and it applies to screen captures only, not imported files. The image is saved the moment you capture, so you keep it even if you discard the recognized text.
+
 **Keep a history, or don't.** History is off by default. Switch it on and Vizhi keeps your recent captures locally for one-click re-copy. It lives in a file on your disk, never syncs anywhere, and "Clear All" deletes it for good.
 
 ---
