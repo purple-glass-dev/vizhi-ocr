@@ -35,7 +35,7 @@ brew upgrade --cask vizhi-ocr
 
 ### Manual Installation
 
-[Download VizhiOCR DMG](https://github.com/purple-glass-dev/vizhi-ocr/releases/download/v0.1.0/VizhiOCR-0.1.0.dmg)
+[Download VizhiOCR DMG](https://github.com/purple-glass-dev/vizhi-ocr/releases/download/v0.2.0/VizhiOCR-0.2.0.dmg)
 
 ---
 
